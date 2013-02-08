@@ -1,4 +1,4 @@
-def form():
+def new():
     import gluon.contrib.simplejson as sj
 
     form = FORM(TABLE(
