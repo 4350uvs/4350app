@@ -1,13 +1,104 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title></title>
-    <link href="{{=URL('static','css/bootstrap.min.css')}}" rel="stylesheet" media="screen">
-  </head>
-  <body>
-    {{include}}
+    <title>UVS - Universal Voting System</title>
+    <!-- Bootstrap -->
     
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+	<link href="{{=URL('static','/css/bootstrap-responsive.css')}}" rel="stylesheet">
+    <link href="{{=URL('static','/css/bootstrap.min.css')}}" rel="stylesheet" media="screen">
+    <link href="{{=URL('static','/css/styles.css')}}" rel="stylesheet" media="screen">
+
+    
+  </head>
+  
+  <body>
     <script src="http://code.jquery.com/jquery-latest.js"></script>
-    <script src="{{=URL('static','js/bootstrap.min.js')}}"></script>
+	<script src="{{=URL('static','/js/bootstrap.min.js')}}"></script>
+    
+    <div id="wrapper">
+    
+    <br/>
+    
+    <div class="container">
+    <div class="container-fluid">
+    
+    <div class="navbar">
+      <div class="navbar-inner">
+        <div class="container">
+        
+          <a class="btn btn-navbar collapsed" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          
+          <a class="brand muted">UVS</a>
+          
+          <div class="nav-collapse navbar-responsive-collapse collapse" style="height: 0px;">
+            <ul class="nav pull-left">
+              <li class="active"><a href="#">Home</a></li>
+              <li class="divider"></li>
+              <li><a href="#">Polls</a></li>
+              <li><a href="#">Surveys</a></li>
+              <li><a href="#">Lectures</a></li>
+              <li><a href="#">Elections</a></li>
+            </ul>
+            
+            <ul class="nav pull-right">
+			  <li><a href="#">Help</a></li>
+              <li class="divider-vertical"></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Account Info<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Options</a></li>
+                  <li><a href="#">Edit Details</a></li>
+                  <li><a href="#">Create New...</a></li>
+                  <li class="divider"></li>
+                  <li><a href="#">Logout</a></li>
+                </ul>
+              </li>
+            </ul>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <br/><br/>
+    
+    
+    <div class="container">
+        <div class="container-fluid">
+            <div class="row-fluid">
+            	<div class="span4"></div>
+                <div class="span8">
+                
+                	{{include}}	<!--New Poll-->
+                
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    </div>
+    </div>
+    
+    <div id="push"></div>
+    
+    </div> <!--end wrapper-->
+    
+    
+    <div id="footer">
+        <div class="container">
+            <img style="border:0; width:88px; height:31px; margin-left: 10px; margin-right: 40px;" src="http://jigsaw.w3.org/css-validator/images/vcss" alt="Valid CSS!" />
+            <img src="/static/img/Stickers4.png" width="89" height="23" alt="web2py" />
+        </div>
+    </div>
+    
+    
   </body>
 </html>
+
+
