@@ -1,3 +1,6 @@
+def index():
+    return dict()
+
 def new():
     import gluon.contrib.simplejson as sj
 

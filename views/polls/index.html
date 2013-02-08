@@ -1,0 +1,15 @@
+{{extend 'layout.html'}}
+
+<h1>New poll</h1>
+<p>
+    <a href="{{=URL('new')}}">Create a new poll</a>
+</p>
+
+<h1>Polls</h1>
+<p>
+    <ul>
+        {{for poll in ['TODO','TODO','TODO']:}}
+  		<li>{{=poll.capitalize()}}</li>
+		{{pass}}
+	</ul>
+</p>
