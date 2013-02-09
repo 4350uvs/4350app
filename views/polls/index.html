@@ -8,8 +8,8 @@
 <h1>Polls</h1>
 <p>
     <ul>
-        {{for poll in ['TODO','TODO','TODO']:}}
-  		<li>{{=poll.capitalize()}}</li>
-		{{pass}}
+        {{for poll in jsonPolls['polls']:}}
+        <a href="{{=poll['id']}}"><li>{{=poll['title']}}</li></a>
+        {{pass}}
 	</ul>
 </p>
