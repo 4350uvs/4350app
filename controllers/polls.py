@@ -1,9 +1,5 @@
 def index():
-    import urllib
-    jsonRetured = urllib.urlopen('http://127.0.0.1:8274/default/api/polls').read()
-    import gluon.contrib.simplejson as json
-    jsonPolls = json.loads(jsonRetured)
-    return dict(jsonPolls = jsonPolls)
+    return dict(jsonPolls = api.getJsonDict('/polls'))
 
 def new():
     import gluon.contrib.simplejson as sj
