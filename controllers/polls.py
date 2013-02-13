@@ -28,13 +28,13 @@ def new():
 						IS_LENGTH(maxsize=100, error_message='Please keep the answer under 100 characters')])),
 						
 		TR('Answer #3:', INPUT(_type='text', _name='answer3', 
-			requires=IS_EMPTY_OR(IS_LENGTH(maxsize=100, error_message='Please keep the answer under 100 characters')))),
+			requires=	IS_EMPTY_OR(IS_LENGTH(maxsize=100, error_message='Please keep the answer under 100 characters')))),
 			
 		TR('Answer #4:', INPUT(_type='text', _name='answer4', 
-			requires=IS_EMPTY_OR(IS_LENGTH(maxsize=100, error_message='Please keep the answer under 100 characters')))),
+			requires=	IS_EMPTY_OR(IS_LENGTH(maxsize=100, error_message='Please keep the answer under 100 characters')))),
 			
 		TR('Answer #5:', INPUT(_type='text', _name='answer5', 
-			requires=IS_EMPTY_OR(IS_LENGTH(maxsize=100, error_message='Please keep the answer under 100 characters')))),
+			requires=	IS_EMPTY_OR(IS_LENGTH(maxsize=100, error_message='Please keep the answer under 100 characters')))),
 			
         TR('', INPUT(_type='submit', _value='SUBMIT')),
     ))
