@@ -9,10 +9,10 @@ def new():
         TR('Description:', TEXTAREA(_type='text', _name='description', requires=IS_EMPTY_OR(IS_LENGTH(250, 1)))),
 		TR('Password:', INPUT(_type='text', _name='password', requires=IS_EMPTY_OR(IS_LENGTH(12, 6)))),
 		TR('Group:', SELECT('All','Studets','Teachers', _name="group",requires=IS_IN_SET(['All','Studets','Teachers']))),
-		TR('Start Date:', INPUT(_type='date', _name='start_date')),
-		TR('Start Time:', INPUT(_type='time', _name='start_time')),
-		TR('End Date:', INPUT(_type='date', _name='end_date')),
-		TR('End Time:', INPUT(_type='time', _name='end_time')),
+		TR('Start Date:', INPUT(_type='date', _name='start_date', requires=IS_NOT_EMPTY())),
+		TR('Start Time:', INPUT(_type='time', _name='start_time', requires=IS_NOT_EMPTY())),
+		TR('End Date:', INPUT(_type='date', _name='end_date', requires=IS_NOT_EMPTY())),
+		TR('End Time:', INPUT(_type='time', _name='end_time', requires=IS_NOT_EMPTY())),
         TR('', INPUT(_type='submit', _value='SUBMIT')),
     ))
     if form.process().accepted:
