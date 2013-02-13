@@ -5,8 +5,10 @@ def new():
     import gluon.contrib.simplejson as sj
 
     form = FORM(TABLE(
-        TR('Name:', INPUT(_type='text', _name='name', requires=IS_NOT_EMPTY())),
-        TR('Email:', INPUT(_type='text', _name='email', requires=IS_EMAIL())),
+        TR('Title:', INPUT(_type='text', _name='title', requires=IS_NOT_EMPTY())),
+        TR('Description:', INPUT(_type='text', _name='description')),
+		TR('Password:', INPUT(_type='text', _name='password')),
+		TR('Group', SELECT('All','Studets','Teachers', _name="group",requires=IS_IN_SET(['All','Studets','Teachers']))),
 		TR('Poll Question:', TEXTAREA(_name='question', requires=IS_NOT_EMPTY())),
 		TR('Answer #1:', INPUT(_type='text', _name='answer1', requires=IS_NOT_EMPTY())),
 		TR('Answer #2:', INPUT(_type='text', _name='answer2', requires=IS_NOT_EMPTY())),
