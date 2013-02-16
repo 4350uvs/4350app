@@ -1,0 +1,15 @@
+{{extend 'layout.html'}}
+
+<h1>New Lecture Session</h1>
+<p>
+    <a href="{{=URL('new')}}">Create a new lecture session</a>
+</p>
+
+<h1>Lecture Sessions</h1>
+<p>
+    <ul>
+        {{for lecture in jsonLectures['lectures']:}}
+        <a href="{{=lecture['id']}}"><li>{{=lecture['title']}}</li></a>
+        {{pass}}
+	</ul>
+</p>

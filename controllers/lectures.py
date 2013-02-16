@@ -1,5 +1,5 @@
 def index():
-	return dict(jsonPolls = api.getJsonDict('/polls'))
+    return dict(jsonLectures = api.getJsonDict('/lectures'))
 
 def new():
 	import gluon.contrib.simplejson as sj
