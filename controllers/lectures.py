@@ -1,10 +1,10 @@
 def index():
-    return dict(jsonPolls = api.getJsonDict('/polls'))
+	return dict(jsonPolls = api.getJsonDict('/polls'))
 
 def new():
-    import gluon.contrib.simplejson as sj
+	import gluon.contrib.simplejson as sj
 
-    form = FORM(TABLE(
+	form = FORM(TABLE(
         TR('Title:', INPUT(_type='text', _name='title', 
 			requires=	[IS_NOT_EMPTY(error_message='Enter a title for your lecture'),
 						IS_LENGTH(maxsize=100, error_message='Please keep the title under 100 characters')])),

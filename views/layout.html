@@ -9,13 +9,10 @@
 	<link href="{{=URL('static','/css/bootstrap-responsive.css')}}" rel="stylesheet">
     <link href="{{=URL('static','/css/bootstrap.min.css')}}" rel="stylesheet" media="screen">
     <link href="{{=URL('static','/css/styles.css')}}" rel="stylesheet" media="screen">
-
     
   </head>
   
   <body>
-    <script src="http://code.jquery.com/jquery-latest.js"></script>
-	<script src="{{=URL('static','/js/bootstrap.min.js')}}"></script>
     
     <div id="wrapper">
     
@@ -37,36 +34,36 @@
           
           <div class="nav-collapse navbar-responsive-collapse collapse" style="height: 0px;">
             <ul class="nav pull-left">
-              <li class="active"><a href="#">Home</a></li>
+              <li><a href="/home/index.html">Home</a></li>
               <li class="divider"></li>
-              <li><a href="#">Polls</a></li>
-              <li><a href="#">Surveys</a></li>
-              <li><a href="#">Lectures</a></li>
-              <li><a href="#">Elections</a></li>
+              <li><a href="/polls/index.html">Polls</a></li>
+              <li><a href="/surveys/index.html">Surveys</a></li>
+              <li><a href="/lectures/index.html">Lectures</a></li>
+              <li><a href="/elections/index.html">Elections</a></li>
 			  
               <li class="divider-vertical"></li>
               
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Create New... <b class="caret"></b></a>
                 <ul class="dropdown-menu">
-                  <li><a href="#">Poll</a></li>
-                  <li><a href="#">Survey</a></li>
-                  <li><a href="#">Lecture Session</a></li>
-                  <li><a href="#">Election</a></li>
+                  <li><a href="/polls/new.html">Poll</a></li>
+                  <li><a href="/surveys/new.html">Survey</a></li>
+                  <li><a href="/lectures/new.html">Lecture Session</a></li>
+                  <li><a href="/elections/new.html">Election</a></li>
                 </ul>
               </li>
             </ul>
             
             <ul class="nav pull-right">
-			  <li><a href="#">Help</a></li>
+			  <li><a href="/help/index.html">Help</a></li>
               <li class="divider-vertical"></li>
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Account Info<b class="caret"></b></a>
                 <ul class="dropdown-menu">
-                  <li><a href="#">Options</a></li>
-                  <li><a href="#">Edit Details</a></li>
+                  <li><a href="/account/options.html">Options</a></li>
+                  <li><a href="/account/details.html">Edit Details</a></li>
                   <li class="divider"></li>
-                  <li><a href="#">Logout</a></li>
+                  <li><a href="/account/logout.html">Logout</a></li>
                 </ul>
               </li>
             </ul>
@@ -78,7 +75,7 @@
     
     <br/><br/>
     
-    
+    <div id="fadeframe">
     <div class="container">
         <div class="container-fluid">
             <div class="row-fluid">
@@ -91,7 +88,7 @@
             </div>
         </div>
     </div>
-
+	</div>
 
     </div>
     </div>
@@ -108,7 +105,10 @@
         </div>
     </div>
     
-    
+	<script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="{{=URL('static','/js/bootstrap.min.js')}}"></script>
+    <script src="{{=URL('static','/js/uvs.js')}}"></script> 
+   
   </body>
 </html>
 

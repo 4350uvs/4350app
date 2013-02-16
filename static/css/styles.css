@@ -19,6 +19,10 @@
 	}
 }
 
+html {
+	overflow-y: scroll;
+}
+
 .rndbox-heading{
 	margin-bottom: 10px;
 }
@@ -44,6 +48,10 @@ http://ryanfait.com/sticky-footer/
 	height: auto !important;
 	height: 100%;
 	margin: -15px auto -70px;
+}
+
+#fadeframe{
+	display: none; /*TEST*/
 }
 
 #footer, #push {
@@ -74,7 +82,55 @@ html, body {
 }
 
 #front-logo{
-		margin-right: -50px;
-		margin-top: -20px;
+	margin-right: -50px;
+	margin-top: -20px;
+}
+
+
+.sessEven{
+	border-top-color: #303030;
+	border-top-style: solid;
+	border-top-width: 1px;
+	
+	height: 100px;
+}
+
+.sessOdd{
+	border-top-color: #303030;
+	border-top-style: solid;
+	border-top-width: 1px;
+	
+	height: 100px;
+	
+	background-color: #f7f7f7;
+}
+
+.sessEven:hover{
+	background-image: url('go_btn-PNG-b.png');
+	background-repeat: no-repeat;
+	background-position: 97% center;
+}
+
+.sessOdd:hover{
+	background-image: url('go_btn-PNG-b.png'); 
+	background-repeat: no-repeat;
+	background-position: 97% center;
+	
+	background-color: #f7f7f7;
+}
+
+.sessInfo{
+	position: relative;
+	width: auto;
+	height: auto;
+	min-width: 600px;
+	min-height: 100%;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+.sessInfo:hover{
+	background-image: url('left-bar-PNG.png');
+	background-repeat: repeat-y;
+	background-position: top left;
 }
 
