@@ -1,6 +1,3 @@
-$(document).ready(function(){
-	$('#fadeframe').fadeIn(500);
-});
 
 $(".sessEven, .sessOdd").hover(function() {
 	$(this).stop().delay(100).animate({
