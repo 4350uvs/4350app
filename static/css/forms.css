@@ -1,0 +1,16 @@
+
+/** new poll form choices  **/
+
+form.new-poll .choices {
+    margin-bottom: 10px;
+}
+
+form.new-poll .choices select {
+    width: auto;
+    margin-bottom: 0;
+}
+
+form.new-poll .choices input {
+    display: block;
+    margin-bottom: 3px;
+}

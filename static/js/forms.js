@@ -17,6 +17,23 @@ function getFormAjax(form) {
 function initAddForm() {
     var form = $('form.new-poll');
 
+    // choices
+    var choicesClass = form.find('.choices');
+    choicesClass.find('select').change(function() {
+        var choiceInputs= function() { return choicesClass.find('input'); };
+
+        var countDiff = choiceInputs().size() - $(this).val();
+        var iterator;
+        if (countDiff > 0) {
+            iterator = function() { choiceInputs().last().remove(); };
+        }
+        else if (countDiff < 0) {
+            iterator = function() { choicesClass.append(choiceInputs().last()[0].outerHTML); };
+        }
+        _(Math.abs(countDiff)).times(iterator);
+    });
+
+    // form submit
     var submitButton = $('form.new-poll button[type=submit]');
     submitButton.click(function(event) {
         event.preventDefault();

@@ -6,13 +6,21 @@
 
     <label for="title">Title:</label>
     <input type="text" name="title" id="title" />
-    
-    <label for="choices">Choices:</label>
-    <ol>
-        <li><input type="text" name="choice" /></li>
-        <li><input type="text" name="choice" /></li>
-        <li><input type="text" name="choice" /></li>
-    </ol>
+
+    <div class="choices">
+        <label> 
+            <select>
+                <option>2</option>
+                <option selected="selected">3</option>
+                <option>4</option>
+                <option>5</option>
+            </select>
+            Choices:
+        </label>
+        <input type="text" name="choice" />
+        <input type="text" name="choice" />
+        <input type="text" name="choice" />
+    </div>
     
     <button type="submit" class="btn btn-primary"
         data-loading-text="Submiting...">
