@@ -1,5 +1,21 @@
 {{extend 'layout.html'}}
+
 <h2>New Poll</h2>
-<p>
-{{=form}}
-</p>
+
+<form method="post" action="/polls" class="new-poll">
+
+    <label for="title">Title:</label>
+    <input type="text" name="title" id="title" />
+    
+    <label for="choices">Choices:</label>
+    <ol>
+        <li><input type="text" name="choice" /></li>
+        <li><input type="text" name="choice" /></li>
+        <li><input type="text" name="choice" /></li>
+    </ol>
+    
+    <button type="submit" class="btn btn-primary"
+        data-loading-text="Submiting...">
+    Submit
+    </button>
+</form>
