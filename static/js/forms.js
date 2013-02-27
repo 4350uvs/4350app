@@ -3,7 +3,7 @@ $(document).ready(function() {
 });
 
 function getFormActionUrl(form) {
-    return 'http://' + document.domain + ':8274/default/api' + form.attr('action');
+    return 'http://' + document.domain + ':8274' + form.attr('action');
 }
 
 function getFormAjax(form) {

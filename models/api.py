@@ -1,6 +1,6 @@
 class API:
     
-    BASE_URL = 'http://127.0.0.1:8274/default/api'
+    BASE_URL = 'http://127.0.0.1:8274/'
     
     def getJsonDict(self, path):
         import urllib
