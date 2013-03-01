@@ -1,0 +1,11 @@
+{{extend 'layout.html'}}
+<h1>{{= poll.question }}</h1>
+<form action="{{=URL(r=request,f='vote',args=poll.id)}}" method="post">
+    {{ for counter,choice in enumerate(poll.choice.select()): }}
+     <label for="choice{{=counter}}">
+     <input type="radio" name="choice" id="choice{{=counter}}" value="{{=choice.id}}">
+      {{=choice.choice}}
+    </label>
+    {{ pass }}
+    <input type="submit" value="Vote" />
+</form>
