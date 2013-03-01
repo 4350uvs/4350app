@@ -1,0 +1,9 @@
+{{extend 'layout.html'}}
+<h1>{{= poll.question }}</h1>
+
+<u1>
+    {{ for choice in poll.choice.select(): }}
+    <li>{{=choice.choice}} -- {{=choice.votes }}
+        vote{{if choice.votes !=1:}}s{{pass}}</li>
+        {{pass }}
+</u1>
