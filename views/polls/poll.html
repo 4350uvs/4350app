@@ -1,0 +1,16 @@
+{{extend 'layout.html'}}
+
+<h1>Polls</h1>
+{{ if latest_poll_list: }}
+<u1>
+    {{ for poll in latest_poll_list: }}
+    <li>
+    {{= poll.question }}
+        [<a href="{{=URL(r=request,f='detail', args=poll.id)}}">vote</a>]
+        [<a href="{{=URL(r=request,f='results', args=poll.id)}}">results</a>]
+    </li>
+    {{ pass }}
+</u1>
+{{ else: }}
+   <p>No polls are available.</p>
+{{ pass }}
