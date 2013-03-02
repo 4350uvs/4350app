@@ -9,18 +9,7 @@
 <p>
     <ul>
         {{for poll in jsonPolls['polls']:}}
-			<a style="display:block" href="{{=poll['id']}}">
-				<div class="sessOdd">
-					<div class="info">
-						<div class="cid"><strong>Course ID: </strong>{{=poll['title']}}</div>
-						<div class="cname"><strong>Course Name: </strong></div>
-						<div class="sect"><strong>Section: </strong></div>
-						<div class="prof"><strong>Instructor: </strong></div>
-						<div class="start"><strong>Start: </strong></div>
-						<div class="end"><strong>End: </strong></div>
-					</div>
-				</div>
-			</a>
+        <a href="{{=poll['id']}}"><li>{{=poll['title']}}</li></a>
         {{pass}}
 	</ul>
 </p>
