@@ -1,3 +1,5 @@
+/*Main style sheet for layout and style elements the layout.html file is included into*/
+
 @charset "utf-8";
 /* CSS Document */
 
@@ -106,12 +108,20 @@ html, body {
 }
 
 .sessEven:hover{
+	border-left-color: #303030;
+	border-left-style: solid;
+	border-left-width: 8px;
+
 	background-image: url('go_btn-PNG-b.png');
 	background-repeat: no-repeat;
 	background-position: 97% center;
 }
 
 .sessOdd:hover{
+	border-left-color: #303030;
+	border-left-style: solid;
+	border-left-width: 8px;
+	
 	background-image: url('go_btn-PNG-b.png'); 
 	background-repeat: no-repeat;
 	background-position: 97% center;
@@ -119,18 +129,59 @@ html, body {
 	background-color: #f7f7f7;
 }
 
-.sessInfo{
+
+.info{
 	position: relative;
-	width: auto;
-	height: auto;
-	min-width: 600px;
-	min-height: 100%;
-	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
-.sessInfo:hover{
-	background-image: url('left-bar-PNG.png');
-	background-repeat: repeat-y;
-	background-position: top left;
+.info .cid{
+	position: absolute;
+	left: 30px;
+	top: 20px;
 }
 
+.info .cname{
+	position: absolute;
+	left: 225px;
+	top: 20px;
+}
+
+.info .sect{
+	position: absolute;
+	left: 500px;
+	top: 20px;
+}
+
+.info .prof{
+	position: absolute;
+	left: 30px;
+	top: 50px;
+}
+
+.info .start{
+	position: absolute;
+	left: 250px;
+	top: 50px;
+}
+
+.info .end{
+	position: absolute;
+	left: 400px;
+	top: 50px;
+}
+
+.sessEven a, a:visited{
+	color: #2A3F55;
+}
+
+.sessEven a:hover{
+	color: #464E71;
+}
+
+.sessOdd a, a:visited{
+	color: #2A3F55;
+}
+
+.sessOdd a:hover{
+	color: #464E71;
+}
