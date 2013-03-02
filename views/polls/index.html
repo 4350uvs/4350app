@@ -1,15 +1,40 @@
 {{extend 'layout.html'}}
 
-<h1>New poll</h1>
-<p>
-    <a href="{{=URL('new')}}">Create a new poll</a>
-</p>
+<div class="row-fluid">
+  <div class="span1">
+	<h2>Polls</h2>
+  </div>
+  <div class="span9"></div>
+  <div class="span2">
+	<div id="createNewPoll" style="margin-top: 15px; margin-right: 10px;">
+	<a href="{{=URL('new')}}"><button class="btn btn-primary" type="button">Create a new poll</button></a>
+	</div>
+  </div>
+</div>
 
-<h1>Polls</h1>
-<p>
-    <ul>
-        {{for poll in jsonPolls['polls']:}}
-        <a href="{{=poll['id']}}"><li>{{=poll['title']}}</li></a>
-        {{pass}}
-	</ul>
-</p>
+<br/>
+
+<div id="slideFrame">
+
+	{{i=0}}
+	{{for poll in jsonPolls['polls']:}}
+	<a style="display:block" href="/polls/{{=poll['id']}}">
+		{{if i%2 == 0:}}
+			<div class="sessEven">
+		{{else:}}
+			<div class="sessOdd">
+		{{pass}}
+			<div class="sessInfo">
+				<div class="cid"><strong>Poll Title: </strong>{{=poll['title']}}</div>
+				<div class="cname"><strong>Subject: </strong> </div>
+				<div class="prof"><strong>Creator: </strong> </div>
+				<div class="start"><strong>Start: </strong> </div>
+				<div class="end"><strong>End: </strong> </div>
+				<div class="note"><strong>Notes: </strong> Nothing.</div>
+			</div>
+		</div>
+	</a>
+	{{i+=1}}
+	{{pass}}
+
+</div><!--END contentFrame-->

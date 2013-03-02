@@ -89,99 +89,111 @@ html, body {
 }
 
 
-.sessEven{
-	border-top-color: #303030;
-	border-top-style: solid;
-	border-top-width: 1px;
+.sessOdd{
+	border-bottom-color: #303030;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
 	
 	height: 100px;
 }
 
-.sessOdd{
-	border-top-color: #303030;
-	border-top-style: solid;
-	border-top-width: 1px;
+.sessEven{
+	border-bottom-color: #303030;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
 	
 	height: 100px;
 	
 	background-color: #f7f7f7;
-}
-
-.sessEven:hover{
-	border-left-color: #303030;
-	border-left-style: solid;
-	border-left-width: 8px;
-
-	background-image: url('go_btn-PNG-b.png');
-	background-repeat: no-repeat;
-	background-position: 97% center;
 }
 
 .sessOdd:hover{
-	border-left-color: #303030;
-	border-left-style: solid;
-	border-left-width: 8px;
-	
-	background-image: url('go_btn-PNG-b.png'); 
+
+	background-image: url('/static/img/go_btn-PNG-b.png');
+	background-repeat: no-repeat;
+	background-position: 97% center;
+}
+
+.sessEven:hover{
+
+	background-image: url('/static/img/go_btn-PNG-b.png'); 
 	background-repeat: no-repeat;
 	background-position: 97% center;
 	
 	background-color: #f7f7f7;
 }
 
-
-.info{
+.sessInfo{
 	position: relative;
+	width: auto;
+	height: auto;
+	min-width: 600px;
+	min-height: 100%;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+		
+.sessInfo:hover{
+	background-image: url('/static/img/left-bar-PNG.png');
+	background-repeat: repeat-y;
+	background-position: top left;
 }
 
-.info .cid{
+/* Use Bootstrap grid code instead of absolute positioning! */
+		
+.sessInfo .cid{
 	position: absolute;
 	left: 30px;
 	top: 20px;
 }
 
-.info .cname{
-	position: absolute;
-	left: 225px;
-	top: 20px;
-}
-
-.info .sect{
-	position: absolute;
-	left: 500px;
-	top: 20px;
-}
-
-.info .prof{
-	position: absolute;
-	left: 30px;
-	top: 50px;
-}
-
-.info .start{
+.sessInfo .cname{
 	position: absolute;
 	left: 250px;
-	top: 50px;
+	top: 20px;
 }
 
-.info .end{
+.sessInfo .sect{
+	position: absolute;
+	left: 600px;
+	top: 20px;
+}
+
+.sessInfo .prof{
+	position: absolute;
+	left: 30px;
+	top: 60px;
+}
+
+.sessInfo .start{
+	position: absolute;
+	left: 250px;
+	top: 60px;
+}
+
+.sessInfo .end{
 	position: absolute;
 	left: 400px;
-	top: 50px;
+	top: 60px;
 }
 
-.sessEven a, a:visited{
-	color: #2A3F55;
+.sessInfo .note{
+	position: absolute;
+	left: 600px;
+	top: 60px;
+}
+
+.sessEven a{
+	color: #464E71;
 }
 
 .sessEven a:hover{
-	color: #464E71;
+	color: #607DB5;
 }
 
-.sessOdd a, a:visited{
-	color: #2A3F55;
+.sessOdd a{
+	color: #464E71;
 }
 
 .sessOdd a:hover{
-	color: #464E71;
+	color: #607DB5;
 }

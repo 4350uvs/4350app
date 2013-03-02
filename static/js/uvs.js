@@ -10,10 +10,12 @@ $(".sessEven, .sessOdd").hover(function() {
 });
 
 $(".sessEven, .sessOdd").click(function(){
-	$('.container-fluid').animate({'width' : '0%'}, 400);
+	$("#slideFrame").animate({'width' : '0%'}, 400, callback);
 }).click(function(){
 	$(".sessEven, .sessOdd").find('hover').unbind('mouseenter');
 }).click(function(){
 	$('.sessEven:hover, .sessOdd:hover').css('background-image', 'none');
 	$(".sessEven, .sessOdd").find('.sessInfo').css("display", "none");
 });
+
+function callback(){  }
