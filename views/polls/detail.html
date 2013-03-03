@@ -1,7 +1,12 @@
 {{extend 'layout.html'}}
+
+{{if poll != None:}}
+
 {{p = poll['poll']}}
 <h2>{{=p['title']}}</h2>
 <br/>
-
 {{=poll}}
-</form>
+
+{{elif poll == None:}}
+<h2>Invalid poll id.</h2>
+{{pass}}

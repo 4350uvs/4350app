@@ -49,3 +49,5 @@ def new():
 def detail():
 	if len(request.args) == 1:
 		return dict(poll = api.getJsonDict('polls/' + request.args[0]))
+	elif len(request.args) == 0:
+		return dict(poll = None)
