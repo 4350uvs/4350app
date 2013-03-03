@@ -18,7 +18,7 @@
 
 	{{i=0}}
 	{{for poll in jsonPolls['polls']:}}
-	<a style="display:block" href="/polls/{{=poll['id']}}">
+	<a style="display:block" href="/polls/detail/{{=poll['id']}}">
 		{{if i%2 == 0:}}
 			<div class="sessEven">
 		{{else:}}
@@ -38,3 +38,5 @@
 	{{pass}}
 
 </div><!--END contentFrame-->
+
+<br/><br/>

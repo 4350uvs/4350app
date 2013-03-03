@@ -45,3 +45,7 @@ def new():
 	else:
 		response.flash = 'Please enter your poll information'
 	return dict(form=form, vars=sj.dumps(form.vars))
+
+def detail():
+	if len(request.args) == 1:
+		return dict(poll = api.getJsonDict('polls/' + request.args[0]))

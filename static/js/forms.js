@@ -44,7 +44,7 @@ function initAddForm() {
         // ajax
         getFormAjax(form)
             .done(function(pollId) {
-                window.location.href = "/polls/" + pollId;
+                window.location.href = "/polls/detail/" + pollId;
             })
             .error(function(data) {
                 submitButton.button('reset');
