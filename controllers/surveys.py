@@ -17,7 +17,7 @@ import gluon.contrib.simplejson as sj
 		TR('Group:', SELECT('All','Studets','Teachers', _name="group",
 			requires=	IS_IN_SET(['All','Studets','Teachers']))),
 			
-		TR('Background Theme:', SELECT('All','Studets','Teachers', _name="backkground",
+		TR('Background Theme:', SELECT('Default','Red','Green', _name="backkground",
 			requires=	IS_IN_SET(['Default','Red','Green']))),
 			
 		TR('Question text:', TEXTAREA(_name='question', 
