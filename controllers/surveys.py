@@ -6,7 +6,7 @@ import gluon.contrib.simplejson as sj
 
     form = FORM(TABLE(
         TR('Survey name:', INPUT(_type='text', _name='name',requires=	[IS_NOT_EMPTY(error_message='Enter a title for your survey data'),
-		IS_LENGTH(maxsize=100, error_message='Please keep the title under 100 characters')])),
+		IS_LENGTH(maxsize=100, error_message='Please keep the heading under 100 characters')])),
         
         TR('Heading:', INPUT(_type='text', _name='heading',requires=	[IS_NOT_EMPTY(error_message='Enter a heading for your survey data'),
 		IS_LENGTH(maxsize=100, error_message='Please keep the heading under 100 characters')])),
