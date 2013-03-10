@@ -51,31 +51,3 @@ def detail():
 		return dict(poll = api.getJsonDict('polls/' + request.args[0]))
 	elif len(request.args) == 0:
 		return dict(poll = None)
-		
-		
-def poll():
-  latest_poll_list = db(db.polls.id>0).select(orderby=db.polls.id,limitby=(0,5))
-  return dict(latest_poll_list=latest_poll_list)
-
-def voting():
-    poll_id=request.args(0)
-    p = db.polls[poll_id]
-    if not p: raise HTTP(404)
-    return dict(poll=p)
-        
-def vote():
-    p =db.polls[request.args(0)]
-    if not p: raise HTTP(404)
-    
-    selected_choice = db.pollChoices[request.vars.content]
-    if not selected_choice or selected_choice.pid !=p.id:
-        session.flash="Please select a valid choice"
-        redirect(URL(r=request,f='voting',args=p.id))
-    else:
-        selected_choice.update_record(votes=db.pollChoices.votes+1)
-        redirect(URL(r=request,f='results', args=p.id))
-    
-def results():
-   p =db.polls[request.args(0)]
-   if not p: raise HTTP(404)
-   return dict(poll=p)		
