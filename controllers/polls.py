@@ -47,7 +47,7 @@ def new():
 	return dict(form=form, vars=sj.dumps(form.vars))
 
 def detail():
-	if len(request.args) == 1:
-		return dict(poll = api.getJsonDict('polls/' + request.args[0]))
-	elif len(request.args) == 0:
-		return dict(poll = None)
+	if len(request.args) == 1 and request.args[0].isdigit():
+		return str(dict(poll = api.getJsonDict('polls/' + request.args[0])))
+	else:
+		raise HTTP(404)
