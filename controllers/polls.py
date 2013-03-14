@@ -48,6 +48,14 @@ def new():
 
 def detail():
 	if len(request.args) == 1 and request.args[0].isdigit():
-		return str(dict(poll = api.getJsonDict('polls/' + request.args[0])))
+		poll = api.getJsonDict('polls/' + request.args[0])
+		isNewlyCreated = False
+		
+		if ( request.wsgi.environ.has_key("HTTP_REFERER") ):
+			http_refer = request.wsgi.environ['HTTP_REFERER']
+			if 'polls/new' in http_refer:
+				isNewlyCreated = True
+		
+		return dict(poll = poll, isNewlyCreated = isNewlyCreated)
 	else:
 		raise HTTP(404)

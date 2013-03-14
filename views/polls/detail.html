@@ -1,12 +1,20 @@
 {{extend 'layout.html'}}
 
-{{if poll != None:}}
-
-{{p = poll['poll']}}
-<h2>{{=p['title']}}</h2>
-<br/>
-{{=poll}}
-
-{{elif poll == None:}}
-<h2>Invalid poll id.</h2>
+{{if isNewlyCreated:}}
+<div class="alert alert-success">
+	<button type="button" class="close" data-dismiss="alert">×</button>
+	Poll is created!
+</div>
 {{pass}}
+
+{{poll = poll['poll']}}
+
+<h2>{{=poll['title']}}</h2>
+
+<ul>
+	{{for choice in poll["choices"]:}}
+	<li>
+	{{=choice['content']}}
+	</li>
+	{{pass}}
+</ul>
