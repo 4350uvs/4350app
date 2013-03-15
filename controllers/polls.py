@@ -48,14 +48,28 @@ def new():
 
 def detail():
 	if len(request.args) == 1 and request.args[0].isdigit():
-		poll = api.getJsonDict('polls/' + request.args[0])
-		isNewlyCreated = False
+		pollJson = api.getJsonDict('polls/' + request.args[0])
+		poll = pollJson['poll']
 		
+		# check if the poll is newly created
+		poll["isNewlyCreated"] = False
 		if ( request.wsgi.environ.has_key("HTTP_REFERER") ):
 			http_refer = request.wsgi.environ['HTTP_REFERER']
 			if 'polls/new' in http_refer:
-				isNewlyCreated = True
+				poll["isNewlyCreated"] = True
 		
-		return dict(poll = poll, isNewlyCreated = isNewlyCreated)
+		# calculate percentage stuff for each poll choice
+		poll["totalVotes"] = 0
+		 # get total votes
+		for choice in poll["choices"]:
+			poll["totalVotes"] += choice["chosenTimes"]
+
+		if poll["totalVotes"] is not 0:
+			 # calculate percentage
+			for choice in poll["choices"]:
+				choice["chosenPercentage"] = \
+					int(float(choice["chosenTimes"]) / float(poll["totalVotes"]) * 100)
+
+		return dict(poll = poll)
 	else:
 		raise HTTP(404)

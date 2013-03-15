@@ -1,13 +1,11 @@
 {{extend 'layout.html'}}
 
-{{if isNewlyCreated:}}
+{{if poll["isNewlyCreated"]:}}
 <div class="alert alert-success">
 	<button type="button" class="close" data-dismiss="alert">×</button>
 	Poll is created!
 </div>
 {{pass}}
-
-{{poll = poll['poll']}}
 
 <h2>{{=poll['title']}}</h2>
 
@@ -18,3 +16,19 @@
 	</li>
 	{{pass}}
 </ul>
+
+<h3>Result <span class="label label-warning">TODO show/hide this based on user role</span></h3>
+
+{{if poll["totalVotes"] is 0:}}
+<p>No votes yet.</p>
+{{else:}}
+{{for choice in poll["choices"]:}}
+{{=choice['content']}}
+<span class="pull-right">
+	{{=choice['chosenTimes']}}/{{=poll["totalVotes"]}} - {{=choice["chosenPercentage"]}}%
+</span>
+<div class="progress progress-info">
+	<div class="bar" style="width: {{=choice["chosenPercentage"]}}%"></div>
+</div>
+{{pass # for loop}}
+{{pass # if else}}
