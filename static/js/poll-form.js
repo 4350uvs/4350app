@@ -2,14 +2,10 @@ $(document).ready(function() {
     initAddForm();
 });
 
-function getFormActionUrl(form) {
-    return 'http://' + document.domain + ':8274' + form.attr('action');
-}
-
 function getFormAjax(form) {
     return jQuery.ajax({
         type: form.attr('method'),
-        url: getFormActionUrl(form),
+        url: ApiUrlBuilder.fromFormAction(form),
         data: form.serialize(),
     });
 }
