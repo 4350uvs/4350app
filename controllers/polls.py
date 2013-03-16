@@ -48,7 +48,12 @@ def new():
 
 def detail():
 	if len(request.args) == 1 and request.args[0].isdigit():
-		pollJson = api.getJsonDict('polls/' + request.args[0])
+		pollJson = None
+		try:
+			pollJson = api.getJsonDict('polls/' + request.args[0])
+		except:
+			raise HTTP(404)
+
 		poll = pollJson['poll']
 		
 		# check if the poll is newly created
