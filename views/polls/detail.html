@@ -37,7 +37,7 @@
 
 
 
-<h3>Vote <span class="label label-warning">doing -Zhao</span></h3>
+<h3>Vote <span class="label label-warning">TODO show/hide this based on user role</span></h3>
 
 <i>Please select one of the following choices to vote.</i>
 
@@ -46,6 +46,7 @@
 	<label class="radio">
 		<input type="radio" name="choices" value="{{=choice['id']}}" data-pid="{{=poll["id"]}}">
 		{{=choice['content']}}
+		<span class="vote-feedback label"></span>
 	</label>
 	{{pass}}
 </p>
