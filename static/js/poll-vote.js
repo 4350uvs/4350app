@@ -1,44 +1,47 @@
-$(document).ready(function() {
-    initVoteChoices();
-});
-
-function initVoteChoices() {
+function vote() {
     var choicesSelectorCriteria = ":radio[name=choices]";
     var choices = $(choicesSelectorCriteria);
-    
-    choices.change(function(event) {
-        event.preventDefault();
 
-        // ajax request
+	// ajax request
 
-        var choiceId = $(choicesSelectorCriteria + ":checked").val();
-        var pollId = $(choices[0]).data("pid");
+	var choiceId = $(choicesSelectorCriteria + ":checked").val();
+	var pollId = $(choices[0]).data("pid");
 
-        var request = jQuery.ajax({
-            type: 'PUT',
-            url: ApiUrlBuilder.chooseChoice(pollId),
-            data: 'cid=' + choiceId,
-        });
+	var request = jQuery.ajax({
+		type: 'PUT',
+		url: ApiUrlBuilder.chooseChoice(pollId),
+		data: 'cid=' + choiceId,
+	});
 
-        // feedback
+	// feedback
 
-        var currFeedback = $($(this).parent().find('.vote-feedback')[0]);
+	var currFeedback = $($(this).parent().find('.vote')[0]);
 
-        var setFeedback = function(type, content) {
-            var feedbacks = $('.vote-feedback');
-            feedbacks.attr('class', 'vote-feedback label');
-            feedbacks.html('');
+	var setFeedback = function(type, content) {
+		var feedbacks = $('.vote');
+		feedbacks.attr('class', 'vote btn ' + type);
+		feedbacks.html('');
+		feedbacks.html(content);
+	};
 
-            currFeedback.addClass(type);
-            currFeedback.html(content);
-        };
+	request.done(function() {
+		setFeedback('btn-success', 'Success');
+		$('#voteBtn').attr('onclick','noVote();');
+	});
 
-        request.done(function() {
-            setFeedback('label-success', 'Success');
-        });
+	request.error(function(xhr, textStatus, errorThrown) {
+		setFeedback('btn-warning', 'Error')
+		
+		var voteBtn = $('#voteBtn');
+		voteBtn.attr('data-content', "Please try voting again.");
+		$('#voteBtn').popover('toggle');
+	});
+	
+}
 
-        request.error(function(xhr, textStatus, errorThrown) {
-            setFeedback('label-warning', 'Error')
-        });
-    });
+function noVote(){
+
+	var voteBtn = $('#voteBtn');
+	voteBtn.attr('data-content', "You've already voted.");
+	$('#voteBtn').popover('toggle');
 }

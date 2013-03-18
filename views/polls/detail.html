@@ -46,7 +46,17 @@
 	<label class="radio">
 		<input type="radio" name="choices" value="{{=choice['id']}}" data-pid="{{=poll["id"]}}">
 		{{=choice['content']}}
-		<span class="vote-feedback label"></span>
 	</label>
 	{{pass}}
+	
+	<div class="row-fluid">
+		<div class="span10"></div>
+		<div class="span2">
+			<div id="voteDiv" style="margin-top: 15px; margin-right: 10px;">
+				<a href=#" onclick="vote();" id="voteBtn" data-content="You've already voted." data-placement="top" ><button class="vote btn btn-primary" type="button">Vote</button></a>
+			</div>
+		</div>
+	</div>
+
+<br/>
 </p>
