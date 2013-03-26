@@ -90,20 +90,11 @@ html, body {
 
 
 .sessOdd{
-	border-bottom-color: #303030;
-	border-bottom-style: solid;
-	border-bottom-width: 1px;
-	
 	height: 100px;
 }
 
 .sessEven{
-	border-bottom-color: #303030;
-	border-bottom-style: solid;
-	border-bottom-width: 1px;
-	
 	height: 100px;
-	
 	background-color: #f7f7f7;
 }
 
