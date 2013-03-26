@@ -2,60 +2,69 @@
 
 {{if poll["isNewlyCreated"]:}}
 <div class="alert alert-success">
-	<button type="button" class="close" data-dismiss="alert">×</button>
-	Poll is created!
+    <button type="button" class="close" data-dismiss="alert">×</button>
+    Poll is created!
 </div>
 {{pass}}
 
 <h2>{{=poll['title']}}</h2>
 
-<ul>
-	{{for choice in poll["choices"]:}}
-	<li>
-	{{=choice['content']}}
-	</li>
-	{{pass}}
-</ul>
+<div class="tabbable" style="margin-bottom: 18px;">
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="#detailTab" data-toggle="tab">Detail</a></li>
+        <li class=""><a href="#voteTab" data-toggle="tab">Vote</a></li>
+        <li class=""><a href="#resultTab" data-toggle="tab">Result</a></li>
+    </ul>
+    <div class="tab-content" style="padding-bottom: 9px; border-bottom: 1px solid #ddd;">
 
 
+        <div class="tab-pane active" id="detailTab">
+            <ul>
+                {{for choice in poll["choices"]:}}
+                <li>
+                {{=choice['content']}}
+                </li>
+                {{pass}}
+            </ul>
+        </div>
 
-<h3>Result <span class="label label-warning">TODO show/hide this based on user role</span></h3>
 
-{{if poll["totalVotes"] is 0:}}
-<p>No votes yet.</p>
-{{else:}}
-{{for choice in poll["choices"]:}}
-{{=choice['content']}}
-<span class="pull-right">
-	{{=choice['chosenTimes']}}/{{=poll["totalVotes"]}} - {{=choice["chosenPercentage"]}}%
-</span>
-<div class="progress progress-info">
-	<div class="bar" style="width: {{=choice["chosenPercentage"]}}%"></div>
+        <div class="tab-pane" id="voteTab">
+            <p>
+                <small>Please select one of the following choices to vote.</small>
+
+                {{for choice in poll["choices"]:}}
+                <label class="radio">
+                    <input type="radio" name="choices" value="{{=choice['id']}}" data-pid="{{=poll["id"]}}">
+                    {{=choice['content']}}
+                </label>
+                {{pass}}
+
+                <div class="row-fluid">
+                    <div>
+                        <div id="voteDiv">
+                            <a onclick="vote();" id="voteBtn" data-content="You've already voted." data-placement="top" ><button class="vote btn btn-primary" type="button">Vote</button></a>
+                        </div>
+                    </div>
+                </div>
+            </p>
+        </div>
+
+
+        <div class="tab-pane" id="resultTab">
+            {{if poll["totalVotes"] is 0:}}
+            <p>No votes yet.</p>
+            {{else:}}
+            {{for choice in poll["choices"]:}}
+            {{=choice['content']}}
+            <span class="pull-right">
+                {{=choice['chosenTimes']}}/{{=poll["totalVotes"]}} - {{=choice["chosenPercentage"]}}%
+            </span>
+            <div class="progress progress-info">
+                <div class="bar" style="width: {{=choice["chosenPercentage"]}}%"></div>
+            </div>
+            {{pass # for loop}}
+            {{pass # if else}}
+        </div>
+    </div>
 </div>
-{{pass # for loop}}
-{{pass # if else}}
-
-
-
-<h3>Vote <span class="label label-warning">TODO show/hide this based on user role</span></h3>
-
-<i>Please select one of the following choices to vote.</i>
-
-<p>
-	{{for choice in poll["choices"]:}}
-	<label class="radio">
-		<input type="radio" name="choices" value="{{=choice['id']}}" data-pid="{{=poll["id"]}}">
-		{{=choice['content']}}
-	</label>
-	{{pass}}
-	
-	<div class="row-fluid">
-		<div>
-			<div id="voteDiv">
-				<a onclick="vote();" id="voteBtn" data-content="You've already voted." data-placement="top" ><button class="vote btn btn-primary" type="button">Vote</button></a>
-			</div>
-		</div>
-	</div>
-
-<br/>
-</p>
