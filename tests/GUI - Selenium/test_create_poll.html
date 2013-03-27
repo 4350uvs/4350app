@@ -13,28 +13,23 @@
 </thead><tbody>
 <tr>
 	<td>open</td>
-	<td>/account/logout.html</td>
+	<td>/</td>
 	<td></td>
 </tr>
 <tr>
 	<td>clickAndWait</td>
-	<td>link=Home</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=Create New...</td>
+	<td>css=button.btn.btn-primary</td>
 	<td></td>
 </tr>
 <tr>
 	<td>clickAndWait</td>
-	<td>link=Poll</td>
+	<td>link=Create New Poll</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
 	<td>id=title</td>
-	<td>Test Poll</td>
+	<td>A Test Poll</td>
 </tr>
 <tr>
 	<td>type</td>
@@ -51,6 +46,12 @@
 	<td>css=button.btn.btn-primary</td>
 	<td></td>
 </tr>
+<tr>
+	<td>assertLocation</td>
+	<td>http://ec2-54-235-121-23.compute-1.amazonaws.com/polls/detail/*</td>
+	<td></td>
+</tr>
+
 </tbody></table>
 </body>
 </html>

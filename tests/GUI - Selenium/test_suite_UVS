@@ -10,9 +10,7 @@
 <tr><td><b>Test Suite</b></td></tr>
 <tr><td><a href="test_login_and_logout.html">test_login_and_logout</a></td></tr>
 <tr><td><a href="test_create_poll.html">test_create_poll</a></td></tr>
-<tr><td><a href="test_vote_in_poll_success.html">test_vote_in_poll_success</a></td></tr>
-<tr><td><a href="test_vote_in_poll_failure.html">test_vote_in_poll_failure</a></td></tr>
-<tr><td><a href="test_navbar_functions.html">test_navbar_functions</a></td></tr>
+<tr><td><a href="test_poll_vote.html">test_poll_vote</a></td></tr>
 </tbody></table>
 </body>
 </html>

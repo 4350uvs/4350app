@@ -4,26 +4,16 @@
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="selenium.base" href="http://ec2-54-235-121-23.compute-1.amazonaws.com/" />
-<title>test_vote_in_poll_success</title>
+<title>test_poll_vote</title>
 </head>
 <body>
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
-<tr><td rowspan="1" colspan="3">test_vote_in_poll_success</td></tr>
+<tr><td rowspan="1" colspan="3">test_poll_vote</td></tr>
 </thead><tbody>
 <tr>
-	<td>open</td>
-	<td>/home/index.html</td>
-	<td></td>
-</tr>
-<tr>
-	<td>clickAndWait</td>
-	<td>link=Polls</td>
-	<td></td>
-</tr>
-<tr>
-	<td>clickAndWait</td>
-	<td>//div[@id='slideFrame']/a[47]/div/div</td>
+	<td>click</td>
+	<td>link=Vote</td>
 	<td></td>
 </tr>
 <tr>
@@ -32,13 +22,13 @@
 	<td></td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>//button[@type='button']</td>
+	<td>pause</td>
+	<td>2000</td>
 	<td></td>
 </tr>
 <tr>
 	<td>verifyTextPresent</td>
-	<td>1/1 - 100%</td>
+	<td>Success</td>
 	<td></td>
 </tr>
 
